@@ -6,12 +6,17 @@ const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
+    let animationFrameId = null;
+
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
       
-      setTimeout(() => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      animationFrameId = requestAnimationFrame(() => {
         setFollowerPosition({ x: e.clientX, y: e.clientY });
-      }, 100);
+      });
     };
 
     const handleMouseOver = (e) => {
@@ -36,6 +41,9 @@ const CustomCursor = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseover', handleMouseOver);
       window.removeEventListener('mouseout', handleMouseOut);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, []);
 

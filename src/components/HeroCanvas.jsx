@@ -2,6 +2,10 @@ import React, { useEffect } from 'react';
 
 const HeroCanvas = () => {
   useEffect(() => {
+    let timeoutId = null;
+    let retries = 0;
+    const maxRetries = 50;
+
     const initUnicornStudio = () => {
       if (typeof window.UnicornStudio !== 'undefined') {
         window.UnicornStudio.addScene({
@@ -11,7 +15,7 @@ const HeroCanvas = () => {
           projectId: 'IkZIoEe2aBLlhFYYpj8W?update=1.01',
           interactivity: {
             mouse: {
-              disableMobie: true,
+              disableMobile: true,
               momentum: 3.0
             }
           }
@@ -24,12 +28,17 @@ const HeroCanvas = () => {
         }).catch((err) => {
           console.error('Unicorn Studio error:', err);
         });
-      } else {
-        setTimeout(initUnicornStudio, 100);
+      } else if (retries < maxRetries) {
+        retries++;
+        timeoutId = setTimeout(initUnicornStudio, 100);
       }
     };
 
     initUnicornStudio();
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   return (

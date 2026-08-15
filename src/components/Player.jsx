@@ -38,7 +38,6 @@ const Player = () => {
         loop
         preload="auto"
       >
-        <source src="/audio/ambient-music.mp3" type="audio/mpeg" />
         <source src="/audio/ambient-music.wav" type="audio/wav" />
         Your browser does not support the audio element.
       </audio>
