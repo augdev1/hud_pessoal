@@ -7,12 +7,13 @@ import {
   SiCounterstrike,
   SiSoundcloud
 } from 'react-icons/si';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Eye, EyeOff } from 'lucide-react';
 import Cursor from './components/Cursor';
 import Player from './components/Player';
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isCardVisible, setIsCardVisible] = useState(true);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -97,7 +98,15 @@ function App() {
       <Cursor />
 
       {/* Responsive Fullscreen Fixed Cosmic Background */}
-      <div className="fixed inset-0 z-0 overflow-hidden bg-black pointer-events-none">
+      <div
+        onClick={() => {
+          if (!isCardVisible) setIsCardVisible(true);
+        }}
+        className={`fixed inset-0 z-0 overflow-hidden bg-black transition-all ${
+          !isCardVisible ? 'cursor-pointer' : 'pointer-events-none'
+        }`}
+        title={!isCardVisible ? "Clique em qualquer lugar para reexibir o card" : undefined}
+      >
         <picture className="w-full h-full block">
           {/* Desktop & Tablet Widescreen: Native High-Res 16:9 Landscape Artwork */}
           <source media="(min-width: 768px)" srcSet="/images/bg-desktop.jpg" />
@@ -125,13 +134,53 @@ function App() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-sm sm:max-w-md mx-auto flex flex-col gap-2 sm:gap-2.5 my-auto"
+          className="w-full max-w-sm sm:max-w-md mx-auto flex flex-col items-center my-auto"
         >
-          {/* Main Card */}
-          <motion.div
+          {/* Top Floating Toggle Button - "Saindo do card" */}
+          <motion.button
             variants={itemVariants}
-            className="glass-morphism rounded-2xl sm:rounded-3xl p-3 sm:p-5 shadow-2xl relative border border-white/10"
+            onClick={() => setIsCardVisible(!isCardVisible)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`mb-2 sm:mb-2.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-full glass-morphism border flex items-center gap-1.5 transition-all duration-300 shadow-xl cursor-pointer select-none group ${
+              isCardVisible
+                ? 'border-white/15 bg-black/60 text-zinc-400 hover:text-white hover:border-white/30 hover:bg-black/80'
+                : 'border-emerald-500/40 bg-black/85 text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.25)]'
+            }`}
+            title={isCardVisible ? "Ocultar card (Ver imagem de fundo)" : "Mostrar card"}
           >
+            {isCardVisible ? (
+              <>
+                <EyeOff className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white transition-colors" />
+                <span className="text-[11px] font-mono tracking-wider">Ocultar card</span>
+              </>
+            ) : (
+              <>
+                <Eye className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+                <span className="text-[11px] font-mono tracking-wider font-medium">Mostrar card</span>
+              </>
+            )}
+          </motion.button>
+
+          {/* Card & Player Container with smooth opacity fade */}
+          <motion.div
+            animate={{
+              opacity: isCardVisible ? 1 : 0,
+              scale: isCardVisible ? 1 : 0.96,
+              filter: isCardVisible ? 'blur(0px)' : 'blur(4px)',
+              pointerEvents: isCardVisible ? 'auto' : 'none'
+            }}
+            transition={{
+              duration: 0.6,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="w-full flex flex-col gap-2 sm:gap-2.5"
+          >
+            {/* Main Card */}
+            <motion.div
+              variants={itemVariants}
+              className="glass-morphism rounded-2xl sm:rounded-3xl p-3 sm:p-5 shadow-2xl relative border border-white/10"
+            >
             {/* Profile Section */}
             <motion.div
               variants={itemVariants}
@@ -239,8 +288,9 @@ function App() {
           </motion.div>
         </motion.div>
       </motion.div>
-    </div>
-  );
+    </motion.div>
+  </div>
+);
 }
 
 export default App;
