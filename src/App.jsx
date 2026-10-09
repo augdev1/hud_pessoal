@@ -22,57 +22,47 @@ function App() {
     {
       label: 'GitHub',
       handle: '@augdev1',
-      category: 'Code',
       url: 'https://github.com/augdev1',
       icon: <SiGithub className="w-5 h-5 text-white" />,
       iconBg: 'bg-[#18181b] border border-zinc-700/80 shadow-inner',
       accentColor: '#ffffff',
-      glowClass: 'hover:shadow-[0_0_24px_rgba(255,255,255,0.12)] hover:border-zinc-500/50',
-      badgeBg: 'bg-zinc-800/80 text-zinc-300 border-zinc-700'
+      glowClass: 'hover:shadow-[0_0_24px_rgba(255,255,255,0.12)] hover:border-zinc-500/50'
     },
     {
       label: 'Instagram',
       handle: '@augrocky',
-      category: 'Social',
       url: 'https://www.instagram.com/augrocky/',
       icon: <SiInstagram className="w-5 h-5 text-white" />,
       iconBg: 'bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] shadow-sm',
       accentColor: '#E1306C',
-      glowClass: 'hover:shadow-[0_0_24px_rgba(225,48,108,0.22)] hover:border-pink-500/40',
-      badgeBg: 'bg-pink-950/40 text-pink-300 border-pink-800/40'
+      glowClass: 'hover:shadow-[0_0_24px_rgba(225,48,108,0.22)] hover:border-pink-500/40'
     },
     {
       label: 'X',
       handle: '@augrockyy',
-      category: 'Social',
       url: 'https://x.com/augrockyy',
       icon: <SiX className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />,
       iconBg: 'bg-black border border-white/20 shadow-inner',
       accentColor: '#ffffff',
-      glowClass: 'hover:shadow-[0_0_24px_rgba(255,255,255,0.15)] hover:border-zinc-400/50',
-      badgeBg: 'bg-zinc-800/80 text-zinc-300 border-zinc-700/80'
+      glowClass: 'hover:shadow-[0_0_24px_rgba(255,255,255,0.15)] hover:border-zinc-400/50'
     },
     {
       label: 'Counter-Strike',
       handle: 'Allstar • extr3myz',
-      category: 'Gaming',
       url: 'https://allstar.gg/u/extr3myz',
       icon: <SiCounterstrike className="w-5 h-5 text-zinc-950" />,
       iconBg: 'bg-gradient-to-br from-[#F5A623] to-[#C97B00] shadow-sm',
       accentColor: '#DE9B35',
-      glowClass: 'hover:shadow-[0_0_24px_rgba(222,155,53,0.22)] hover:border-amber-500/40',
-      badgeBg: 'bg-amber-950/40 text-amber-300 border-amber-800/40'
+      glowClass: 'hover:shadow-[0_0_24px_rgba(222,155,53,0.22)] hover:border-amber-500/40'
     },
     {
       label: 'SoundCloud',
       handle: '@augustorockyy',
-      category: 'Audio',
       url: 'https://soundcloud.com/augustorockyy',
       icon: <SiSoundcloud className="w-5 h-5 text-white" />,
       iconBg: 'bg-gradient-to-r from-[#FF5500] to-[#FF3300] shadow-sm',
       accentColor: '#FF5500',
-      glowClass: 'hover:shadow-[0_0_24px_rgba(255,85,0,0.22)] hover:border-orange-500/40',
-      badgeBg: 'bg-orange-950/40 text-orange-300 border-orange-800/40'
+      glowClass: 'hover:shadow-[0_0_24px_rgba(255,85,0,0.22)] hover:border-orange-500/40'
     }
   ];
 
@@ -218,16 +208,9 @@ function App() {
 
                   {/* Brand & Handle Text */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center space-x-2">
-                      <h3 className="text-white font-semibold text-sm sm:text-base group-hover:text-white transition-colors truncate">
-                        {link.label}
-                      </h3>
-                      <span
-                        className={`text-[10px] font-mono px-1.5 py-0.2 rounded border font-medium ${link.badgeBg}`}
-                      >
-                        {link.category}
-                      </span>
-                    </div>
+                    <h3 className="text-white font-semibold text-sm sm:text-base group-hover:text-white transition-colors truncate">
+                      {link.label}
+                    </h3>
                     <p className="text-zinc-400 text-xs truncate font-mono mt-0.5 group-hover:text-zinc-300 transition-colors">
                       {link.handle}
                     </p>
