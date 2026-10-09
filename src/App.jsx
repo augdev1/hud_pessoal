@@ -10,7 +10,6 @@ import {
 import { ExternalLink } from 'lucide-react';
 import Cursor from './components/Cursor';
 import Player from './components/Player';
-import GlassWaves from './components/GlassWaves';
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -107,8 +106,17 @@ function App() {
       {/* Custom Cursor */}
       <Cursor />
 
-      {/* Dynamic Glassmorphism Black Waves Background */}
-      <GlassWaves />
+      {/* Fullscreen Fixed Background Image */}
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <img
+          src="/images/bg.jpg"
+          alt="Cosmic Horizon Background"
+          className="w-full h-full object-cover object-center select-none scale-100"
+        />
+        {/* Subtle dark tint and vignette for enhanced contrast */}
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.75)_100%)]" />
+      </div>
 
       {/* Audio Player */}
       <Player />
@@ -182,19 +190,19 @@ function App() {
                 variants={itemVariants}
                 className="flex flex-wrap items-center justify-center gap-1.5 text-xs text-zinc-400"
               >
-                <span className="px-2.5 py-0.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 font-medium">
+                <span className="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
                   Música
                 </span>
                 <span className="text-zinc-600">•</span>
-                <span className="px-2.5 py-0.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 font-medium">
+                <span className="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
                   Tecnologia
                 </span>
                 <span className="text-zinc-600">•</span>
-                <span className="px-2.5 py-0.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 font-medium">
+                <span className="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
                   IA
                 </span>
                 <span className="text-zinc-600">•</span>
-                <span className="px-2.5 py-0.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 font-medium">
+                <span className="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
                   CS
                 </span>
               </motion.div>

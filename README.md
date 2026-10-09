@@ -39,12 +39,12 @@ hud_pessoal/
 │   ├── audio/
 │   │   └── ambient-music.wav     # Faixa de audio ambiente
 │   ├── images/
-│   │   └── aug1.jpg              # Asset de avatar do perfil
+│   │   ├── aug1.jpg              # Asset de avatar do perfil
+│   │   └── bg.jpg                # Imagem de fundo cosmica em alta resolucao
 │   └── favicon.svg
 ├── src/
 │   ├── components/
 │   │   ├── Cursor.jsx            # Cursor interativo com deteccao de estados
-│   │   ├── GlassWaves.jsx        # Canvas procedural com ondas de vidro escuro
 │   │   └── Player.jsx            # Interface e controle do player de audio
 │   ├── App.jsx                   # Estrutura central e configuracao dos cartoes
 │   ├── index.css                 # Folha de estilos global, tokens e reset
