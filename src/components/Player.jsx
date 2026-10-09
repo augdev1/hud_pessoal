@@ -48,7 +48,7 @@ const Player = () => {
           {/* Now Playing Header */}
           <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-zinc-400 font-mono tracking-wider uppercase select-none whitespace-nowrap">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
-            <span>Tocando agora: AUG MIDNIGHT</span>
+            <span>Tocando agora: MIDNIGHT PROD BY AUG </span>
           </div>
 
           {/* Unified Integrated Controls Bar - Perfectly Aligned from Left to T of MIDNIGHT */}
@@ -63,11 +63,11 @@ const Player = () => {
               >
                 {isPlaying ? (
                   <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                   </svg>
                 ) : (
                   <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
+                    <path d="M8 5v14l11-7z" />
                   </svg>
                 )}
               </button>
