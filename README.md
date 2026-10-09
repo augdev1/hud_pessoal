@@ -1,4 +1,8 @@
 # Personal HUD & Link Hub
+---
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/2794101c-7550-4369-9213-98c3d1bf0e6a" />
+
+---
 
 Plataforma de identidade digital e hub de conexoes de alta performance, construida sobre uma interface escura (deep dark) minimalista com estetica HUD/cyber. Utiliza renderizacao grafica nativa em Canvas para simulacao de ondas dinamicas em glassmorphism, tipografia precisa, iconografia vetorial autentica e arquitetura baseada em React e Tailwind CSS.
 
