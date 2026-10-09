@@ -118,18 +118,18 @@ function App() {
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoaded ? 1 : 0 }}
         transition={{ duration: 1, ease: 'easeOut' }}
-        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12"
+        className="relative z-10 min-h-screen flex items-center justify-center px-3.5 sm:px-6 lg:px-8 py-8 sm:py-12 pb-36 sm:pb-24"
       >
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-md mx-auto sm:max-w-lg"
+          className="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto"
         >
           {/* Main HUD Card */}
           <motion.div
             variants={itemVariants}
-            className="glass-morphism rounded-3xl p-5 sm:p-7 shadow-2xl relative border border-white/10"
+            className="glass-morphism rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-2xl relative border border-white/10"
           >
             {/* Top decorative subtle HUD bar */}
             <div className="flex items-center justify-between pb-4 mb-5 border-b border-white/[0.06]">

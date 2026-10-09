@@ -43,26 +43,26 @@ const Player = () => {
       </audio>
 
       {/* Volume Control Panel */}
-      <div className="fixed bottom-8 sm:bottom-6 left-1/2 sm:left-auto sm:right-6 -translate-x-1/2 sm:translate-x-0 z-50 glass-morphism rounded-2xl p-3 sm:p-4 flex flex-col gap-2 transition-all duration-300 hover:scale-105 w-auto sm:w-auto max-w-[95%] sm:max-w-md pb-safe">
+      <div className="fixed bottom-3 sm:bottom-6 left-1/2 sm:left-auto sm:right-6 -translate-x-1/2 sm:translate-x-0 z-50 glass-morphism rounded-2xl p-2.5 sm:p-3.5 flex flex-col gap-1.5 sm:gap-2 transition-all duration-300 w-[calc(100%-24px)] max-w-[340px] sm:max-w-none sm:w-auto shadow-2xl border border-white/10">
         {/* Now Playing Text */}
-        <div className="text-xs sm:text-sm text-white/70 text-center font-semibold tracking-wider">
+        <div className="text-[10px] sm:text-xs text-zinc-400 text-center font-mono font-medium tracking-wider uppercase">
           Tocando agora: AUG MIDNIGHT
         </div>
 
         {/* Controls */}
-        <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3">
+        <div className="flex items-center justify-center sm:justify-start gap-2.5 sm:gap-3">
           {/* Play/Pause Button */}
           <button
             onClick={togglePlay}
-            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300"
+            className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 flex items-center justify-center transition-all duration-200"
             title={isPlaying ? "Pausar" : "Tocar"}
           >
             {isPlaying ? (
-              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
               </svg>
             ) : (
-              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>
               </svg>
             )}
@@ -71,16 +71,16 @@ const Player = () => {
           {/* Mute Button */}
           <button
             onClick={toggleMute}
-            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300"
+            className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 flex items-center justify-center transition-all duration-200"
             title={isMuted ? "Ativar som" : "Mutar"}
           >
             {isMuted ? (
-              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
               </svg>
             ) : (
-              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
               </svg>
             )}
@@ -100,7 +100,7 @@ const Player = () => {
                 background: `linear-gradient(to right, #ffffff 0%, #ffffff ${volume * 100}%, #374151 ${volume * 100}%, #374151 100%)`
               }}
             />
-            <span className="text-white/60 text-xs sm:text-sm w-8 text-right">
+            <span className="text-white/60 text-[11px] sm:text-xs w-7 text-right font-mono">
               {Math.round(volume * 100)}%
             </span>
           </div>

@@ -101,17 +101,13 @@ a, button, input, textarea, select {
   cursor: none !important;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsive & Touch Design */
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
   .custom-cursor, .cursor-dot {
-    display: none;
+    display: none !important;
   }
   
-  body {
-    cursor: auto;
-  }
-  
-  a, button, input, textarea, select {
+  *, body, a, button, input, textarea, select {
     cursor: auto !important;
   }
 }
@@ -120,5 +116,6 @@ a, button, input, textarea, select {
 @media (max-width: 480px) {
   body {
     font-size: 14px;
+    -webkit-tap-highlight-color: transparent;
   }
 }
