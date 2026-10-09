@@ -134,27 +134,11 @@ function App() {
           animate="visible"
           className="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto"
         >
-          {/* Main HUD Card */}
+          {/* Main Card */}
           <motion.div
             variants={itemVariants}
-            className="glass-morphism rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-2xl relative border border-white/10"
+            className="glass-morphism rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-2xl relative border border-white/10"
           >
-            {/* Top decorative subtle HUD bar */}
-            <div className="flex items-center justify-between pb-4 mb-5 border-b border-white/[0.06]">
-              <div className="flex items-center space-x-2">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span className="text-[11px] font-mono tracking-widest text-zinc-400 uppercase">
-                  HUD // ONLINE
-                </span>
-              </div>
-              <span className="text-[11px] font-mono text-zinc-500 tracking-wider">
-                v2.0 • AUG
-              </span>
-            </div>
-
             {/* Profile Section */}
             <motion.div
               variants={itemVariants}
