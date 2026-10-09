@@ -126,12 +126,12 @@ function App() {
       {/* Audio Player */}
       <Player />
 
-      {/* Main Content Container */}
+      {/* Main Content Container - Fixed & 100% Static */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoaded ? 1 : 0 }}
         transition={{ duration: 1, ease: 'easeOut' }}
-        className="relative z-10 min-h-screen flex items-center justify-center px-3.5 sm:px-6 lg:px-8 py-8 sm:py-12 pb-36 sm:pb-24"
+        className="fixed inset-0 z-10 flex flex-col items-center justify-center px-3.5 sm:px-6 lg:px-8 py-2 sm:py-6 overflow-hidden select-none"
       >
         <motion.div
           variants={containerVariants}
@@ -142,17 +142,17 @@ function App() {
           {/* Main Card */}
           <motion.div
             variants={itemVariants}
-            className="glass-morphism rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-2xl relative border border-white/10"
+            className="glass-morphism rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 shadow-2xl relative border border-white/10"
           >
             {/* Profile Section */}
             <motion.div
               variants={itemVariants}
-              className="text-center mb-6"
+              className="text-center mb-3 sm:mb-4"
             >
               {/* Avatar with authentic glowing border */}
               <motion.div
                 variants={itemVariants}
-                className="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4"
+                className="relative w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-2 sm:mb-2.5"
               >
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-zinc-700 via-zinc-400 to-zinc-700 opacity-50 blur-sm" />
                 <div className="relative w-full h-full rounded-full p-[2px] bg-gradient-to-b from-white/30 via-white/10 to-transparent">
@@ -169,7 +169,7 @@ function App() {
               {/* Name */}
               <motion.h1
                 variants={itemVariants}
-                className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2 bg-gradient-to-b from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent"
+                className="text-lg sm:text-2xl font-extrabold tracking-tight mb-1 bg-gradient-to-b from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent"
               >
                 Augusto Sousa
               </motion.h1>
@@ -177,21 +177,21 @@ function App() {
               {/* Subtitle / Tags */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-wrap items-center justify-center gap-1.5 text-xs text-zinc-400"
+                className="flex flex-wrap items-center justify-center gap-1.5 text-[11px] sm:text-xs text-zinc-400"
               >
-                <span className="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
+                <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
                   Música
                 </span>
                 <span className="text-zinc-600">•</span>
-                <span className="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
+                <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
                   Tecnologia
                 </span>
                 <span className="text-zinc-600">•</span>
-                <span className="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
+                <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
                   IA
                 </span>
                 <span className="text-zinc-600">•</span>
-                <span className="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
+                <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-zinc-300 font-medium">
                   CS
                 </span>
               </motion.div>
@@ -200,7 +200,7 @@ function App() {
             {/* Links Section with Authentic Brand Logos */}
             <motion.div
               variants={itemVariants}
-              className="space-y-2.5 sm:space-y-3"
+              className="space-y-1.5 sm:space-y-2.5"
             >
               {links.map((link, index) => (
                 <motion.button
@@ -209,11 +209,11 @@ function App() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => window.open(link.url, '_blank')}
-                  className={`w-full glass-morphism-card rounded-2xl p-3 sm:p-3.5 flex items-center space-x-3.5 border border-white/[0.06] transition-all duration-300 group cursor-pointer text-left ${link.glowClass}`}
+                  className={`w-full glass-morphism-card rounded-xl sm:rounded-2xl p-2 sm:p-3 flex items-center space-x-2.5 sm:space-x-3.5 border border-white/[0.06] transition-all duration-300 group cursor-pointer text-left ${link.glowClass}`}
                 >
                   {/* Authentic Logo Container */}
                   <div
-                    className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-105 ${link.iconBg}`}
+                    className={`w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-105 ${link.iconBg}`}
                   >
                     {link.icon}
                   </div>
