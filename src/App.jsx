@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import {
   SiGithub,
   SiInstagram,
-  SiLinkedin,
+  SiX,
   SiCounterstrike,
   SiSoundcloud
 } from 'react-icons/si';
@@ -42,15 +42,15 @@ function App() {
       badgeBg: 'bg-pink-950/40 text-pink-300 border-pink-800/40'
     },
     {
-      label: 'LinkedIn',
-      handle: 'Augusto Sousa',
-      category: 'Network',
-      url: 'https://www.linkedin.com/in/augusto-sousa-830719284/',
-      icon: <SiLinkedin className="w-5 h-5 text-white" />,
-      iconBg: 'bg-[#0A66C2] shadow-sm',
-      accentColor: '#0A66C2',
-      glowClass: 'hover:shadow-[0_0_24px_rgba(10,102,194,0.22)] hover:border-blue-500/40',
-      badgeBg: 'bg-blue-950/40 text-blue-300 border-blue-800/40'
+      label: 'X',
+      handle: '@augrockyy',
+      category: 'Social',
+      url: 'https://x.com/augrockyy',
+      icon: <SiX className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />,
+      iconBg: 'bg-black border border-white/20 shadow-inner',
+      accentColor: '#ffffff',
+      glowClass: 'hover:shadow-[0_0_24px_rgba(255,255,255,0.15)] hover:border-zinc-400/50',
+      badgeBg: 'bg-zinc-800/80 text-zinc-300 border-zinc-700/80'
     },
     {
       label: 'Counter-Strike',
