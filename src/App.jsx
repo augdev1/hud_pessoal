@@ -106,13 +106,18 @@ function App() {
       {/* Custom Cursor */}
       <Cursor />
 
-      {/* Fullscreen Fixed Background Image */}
-      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <img
-          src="/images/bg.jpg"
-          alt="Cosmic Horizon Background"
-          className="w-full h-full object-cover object-center select-none scale-100"
-        />
+      {/* Responsive Fullscreen Fixed Cosmic Background */}
+      <div className="fixed inset-0 z-0 overflow-hidden bg-black pointer-events-none">
+        <picture className="w-full h-full block">
+          {/* Desktop & Tablet Widescreen: Native High-Res 16:9 Landscape Artwork */}
+          <source media="(min-width: 768px)" srcSet="/images/bg-desktop.jpg" />
+          {/* Mobile Portrait: Native Vertical Wallpaper */}
+          <img
+            src="/images/bg-mobile.jpg"
+            alt="Cosmic Vortex Horizon"
+            className="w-full h-full object-cover object-center select-none"
+          />
+        </picture>
         {/* Subtle dark tint and vignette for enhanced contrast */}
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.75)_100%)]" />
