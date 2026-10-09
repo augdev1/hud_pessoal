@@ -123,8 +123,6 @@ function App() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.75)_100%)]" />
       </div>
 
-      {/* Audio Player */}
-      <Player />
 
       {/* Main Content Container - Fixed & 100% Static */}
       <motion.div
@@ -137,12 +135,12 @@ function App() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto"
+          className="w-full max-w-sm sm:max-w-md mx-auto flex flex-col gap-2 sm:gap-2.5 my-auto"
         >
           {/* Main Card */}
           <motion.div
             variants={itemVariants}
-            className="glass-morphism rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 shadow-2xl relative border border-white/10"
+            className="glass-morphism rounded-2xl sm:rounded-3xl p-3 sm:p-5 shadow-2xl relative border border-white/10"
           >
             {/* Profile Section */}
             <motion.div
@@ -246,10 +244,15 @@ function App() {
             {/* Footer */}
             <motion.div
               variants={itemVariants}
-              className="mt-6 pt-4 border-t border-white/[0.06] text-center text-xs text-zinc-500 font-mono"
+              className="mt-4 pt-3 border-t border-white/[0.06] text-center text-[11px] sm:text-xs text-zinc-500 font-mono"
             >
               <span>© 2026 augrocky</span>
             </motion.div>
+          </motion.div>
+
+          {/* Audio Player directly docked below the main card */}
+          <motion.div variants={itemVariants} className="w-full">
+            <Player />
           </motion.div>
         </motion.div>
       </motion.div>

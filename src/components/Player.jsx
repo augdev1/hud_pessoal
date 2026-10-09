@@ -43,7 +43,7 @@ const Player = () => {
       </audio>
 
       {/* Volume Control Panel */}
-      <div className="fixed bottom-3 sm:bottom-6 left-1/2 sm:left-auto sm:right-6 -translate-x-1/2 sm:translate-x-0 z-50 glass-morphism rounded-2xl p-2.5 sm:p-3 flex flex-col gap-1.5 transition-all duration-300 w-[calc(100%-28px)] max-w-sm sm:max-w-none sm:w-auto shadow-2xl border border-white/10">
+      <div className="w-full glass-morphism rounded-2xl p-2.5 sm:p-3 flex flex-col gap-1.5 transition-all duration-300 shadow-2xl border border-white/10">
         {/* Now Playing Header */}
         <div className="flex items-center justify-center gap-1.5 text-[10px] sm:text-xs text-zinc-400 font-mono tracking-wider uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
